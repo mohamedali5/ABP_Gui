@@ -62,6 +62,7 @@ void MainGui::on_initializeButton_clicked()
  * print the text into the designated text boxes.
  * Whenever run simulation button is clicked, a new line of output is
  * printed to the text boxes.
+ * This function returns void.
  */
 void MainGui::on_runButton_clicked()
 {
