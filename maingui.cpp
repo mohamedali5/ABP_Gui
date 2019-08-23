@@ -15,7 +15,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-static unsigned long counter = 5;
+static unsigned long counter = 7; // This number represents the starting point for the vector, skips headers.
 static vector<string> vect;
 
 MainGui::MainGui(QWidget *parent) :
@@ -36,7 +36,8 @@ MainGui::~MainGui()
 void readFile()
 {
     ifstream file;
-    file.open ("../AlternateBitProtocolSimulator-simulator-improvement-E/data/top_model/abp_output_transform.txt"); //change to file location of ABP output file
+    file.open ("../AlternateBitProtocolSimulator-simulator-improvement-E/data/top_model/abp_output_transform.txt"); 
+    //change to file location of ABP output file
     if (!file.is_open()) return;
 
     std::string word;
@@ -64,11 +65,11 @@ void MainGui::on_initializeButton_clicked()
  */
 void MainGui::on_runButton_clicked()
 {
-    if((counter + 3)< vect.size()){
+    if((counter + 5)< vect.size()){
         QString time = QString::fromStdString(vect.at(counter));
         QString value = QString::fromStdString(vect.at(counter+1));
-        QString port = QString::fromStdString(vect.at(counter+2));
-        QString component = QString::fromStdString(vect.at(counter+3));
+        QString port = QString::fromStdString(vect.at(counter+4));
+        QString component = QString::fromStdString(vect.at(counter+5));
            ui -> textBrowser -> setText(time);
            ui -> textBrowser_2 -> setText(value);
            ui -> textBrowser_3 -> setText(port);
